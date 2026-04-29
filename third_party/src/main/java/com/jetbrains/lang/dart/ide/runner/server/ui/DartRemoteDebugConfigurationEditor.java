@@ -104,7 +104,6 @@ public class DartRemoteDebugConfigurationEditor extends SettingsEditor<DartRemot
 
   private void createUIComponents() {
     myDartProjectCombo = new ComboBox<>();
-    installBrowseExtension();
   }
 
   private void installBrowseExtension() {
