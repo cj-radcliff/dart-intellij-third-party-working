@@ -104,6 +104,7 @@ public class DartRemoteDebugConfigurationEditor extends SettingsEditor<DartRemot
 
   private void createUIComponents() {
     myDartProjectCombo = new ComboBox<>();
+    installBrowseExtension();
   }
 
   private void installBrowseExtension() {
@@ -123,12 +124,7 @@ public class DartRemoteDebugConfigurationEditor extends SettingsEditor<DartRemot
         }));
     editor.setBorder(null);
     myDartProjectCombo.setEditable(true);
-    myDartProjectCombo.setEditor(new BasicComboBoxEditor() {
-      @Override
-      protected JTextField createEditorComponent() {
-        return editor;
-      }
-    });
+    myDartProjectCombo.setEditor(new BasicComboBoxEditor() );
   }
 
   private static class NameAndPath implements Comparable<NameAndPath> {
