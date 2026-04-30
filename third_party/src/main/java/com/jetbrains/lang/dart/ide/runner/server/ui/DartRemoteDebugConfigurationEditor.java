@@ -123,8 +123,37 @@ public class DartRemoteDebugConfigurationEditor extends SettingsEditor<DartRemot
         }));
     editor.setBorder(null);
     myDartProjectCombo.setEditable(true);
-    myDartProjectCombo.setEditor(new BasicComboBoxEditor() );
-  }
+    myDartProjectCombo.setEditor(new ComboBoxEditor() {
+      @Override
+      public java.awt.Component getEditorComponent() {
+        return editor;
+      }
+
+      @Override
+      public void setItem(Object anObject) {
+        editor.setText(anObject == null ? "" : anObject.toString());
+      }
+
+      @Override
+      public Object getItem() {
+        return editor.getText();
+      }
+
+      @Override
+      public void selectAll() {
+        editor.selectAll();
+      }
+
+      @Override
+      public void addActionListener(java.awt.event.ActionListener l) {
+        editor.addActionListener(l);
+      }
+
+      @Override
+      public void removeActionListener(java.awt.event.ActionListener l) {
+        editor.removeActionListener(l);
+      }
+    });  }
 
   private static class NameAndPath implements Comparable<NameAndPath> {
     private final @Nullable String myName;
