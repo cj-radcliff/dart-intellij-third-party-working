@@ -8,7 +8,7 @@
 
 ### Changed
 - Extract Method, Extract Local Variable, and Inline refactorings now route to LSP code actions when experimental LSP features are enabled, applying refactorings directly without the legacy options dialogs (such as custom naming or choosing between single and all occurrences) (#684)
-- Syntax highlighting implemented with JetBrains LSP as an experimental feature (#401)
+- Syntax highlighting implemented with JetBrains LSP as an experimental feature (requires Dart SDK 3.14.0-307.0.dev or newer) (#401)
 
 ### Removed
 
@@ -28,9 +28,6 @@
 - Quick fixes, assists, source actions, and refactorings via LSP code actions (experimental feature; requires Dart SDK 3.14.0-137.0.dev or newer) (#526)
 
 ### Changed
-- Highlighting read vs write variable occurrences via LSP is now enabled for all users
-
-### Removed
 - Highlighting read vs write variable occurrences via LSP is now enabled for all users (#693)
 
 ### Fixed
