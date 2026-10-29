@@ -58,8 +58,6 @@ import com.intellij.platform.dartlsp.api.customization.LspSemanticTokensCustomiz
 import com.intellij.platform.dartlsp.api.customization.LspSemanticTokensDisabled
 import com.intellij.platform.dartlsp.api.customization.LspSemanticTokensSupport
 import com.intellij.platform.dartlsp.api.customization.LspSignatureHelpDisabled
-import com.intellij.platform.dartlsp.api.customization.LspTypeHierarchyCustomizer
-import com.intellij.platform.dartlsp.api.customization.LspTypeHierarchyDisabled
 import com.intellij.platform.dartlsp.api.customization.LspTypeHierarchySupport
 import com.intellij.platform.dartlsp.api.customization.LspWorkspaceSymbolDisabled
 import com.intellij.psi.PsiFile
@@ -234,12 +232,7 @@ class DartLspServerDescriptor(project: Project) : ProjectWideLspServerDescriptor
             } else {
                 LspCallHierarchyDisabled
             }
-        override val typeHierarchyCustomizer: LspTypeHierarchyCustomizer
-            get() = if (DartConfigurable.isExperimentalLspFeaturesEnabled(project)) {
-                LspTypeHierarchySupport()
-            } else {
-                LspTypeHierarchyDisabled
-            }
+        override val typeHierarchyCustomizer = LspTypeHierarchySupport()
 
         override val selectionRangeCustomizer = LspSelectionRangeDisabled
         override val codeLensCustomizer = LspCodeLensDisabled
