@@ -8,6 +8,8 @@
 ### Removed
 
 ### Fixed
+- Avoid a trailing newline in the Dart SDK version, which leaked into analytics (`sdkVersion`), Settings, editor notifications, crash reports, and logs (#790)
+- Avoid sticky lines error on incomplete declarations when experimental LSP is enabled (#734)
 
 ## 511.0.0
 
